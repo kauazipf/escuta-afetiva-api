@@ -26,10 +26,10 @@ public class PacienteController {
 
     @PostMapping("/pacientes")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Paciente create(@RequestBody Paciente paciente){
+    public ResponseEntity<String> criarPaciente(@RequestBody Paciente paciente) {
         System.out.println("Cadastrando um novo paciente " + paciente.getNome() + paciente.getEmail() + paciente.getPlano() + paciente.getTelefone());
         repository.add(paciente);
-        return paciente;
+        return ResponseEntity.ok("Paciente criado com sucesso!");
     }
 
     @GetMapping(path = "/pacientes{id}")

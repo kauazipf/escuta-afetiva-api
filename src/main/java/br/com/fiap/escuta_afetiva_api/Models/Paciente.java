@@ -1,5 +1,7 @@
 package br.com.fiap.escuta_afetiva_api.Models;
 
+import java.util.Random;
+
 public class Paciente {
     private Long Id;
     private String Nome;
@@ -8,11 +10,11 @@ public class Paciente {
     private String Email;
 
     public Paciente(Long id, String nome, String plano, String telefone, String email) {
-        Id = id;
-        Nome = nome;
-        Plano = plano;
-        Telefone = telefone;
-        Email = email;
+        this.Id = Math.abs(new Random().nextLong());
+        this.Nome = nome;
+        this.Plano = plano;
+        this.Telefone = telefone;
+        this.Email = email;
     }
 
     public Long getId() {
@@ -39,14 +41,6 @@ public class Paciente {
         Plano = plano;
     }
 
-    public String getTelefone() {
-        return Telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        Telefone = telefone;
-    }
-
     public String getEmail() {
         return Email;
     }
@@ -55,7 +49,12 @@ public class Paciente {
         Email = email;
     }
 
-    
+    public String getTelefone() {
+        return Telefone;
+    }
 
+    public void setTelefone(String telefone) {
+        Telefone = telefone;
+    }
 
 }
