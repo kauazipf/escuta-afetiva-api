@@ -1,60 +1,36 @@
 package br.com.fiap.escuta_afetiva_api.Models;
 
-import java.util.Random;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Paciente {
-    private Long Id;
-    private String Nome;
-    private String Plano;
-    private String Telefone;
-    private String Email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Paciente(Long id, String nome, String plano, String telefone, String email) {
-        this.Id = Math.abs(new Random().nextLong());
-        this.Nome = nome;
-        this.Plano = plano;
-        this.Telefone = telefone;
-        this.Email = email;
-    }
+    @NotBlank(message = "campo obrigatório")
+    private String name;
 
-    public Long getId() {
-        return Id;
-    }
+    @NotBlank(message = "campo obrigatório")
+    private String plano;
 
-    public void setId(Long id) {
-        Id = id;
-    }
+    @NotBlank(message = "campo obrigatório")
+    private String email;
 
-    public String getNome() {
-        return Nome;
-    }
-
-    public void setNome(String nome) {
-        Nome = nome;
-    }
-
-    public String getPlano() {
-        return Plano;
-    }
-
-    public void setPlano(String plano) {
-        Plano = plano;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getTelefone() {
-        return Telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        Telefone = telefone;
-    }
+    @NotBlank(message = "campo obrigatório")
+    private String telefone;
 
 }
