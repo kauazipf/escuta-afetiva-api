@@ -43,15 +43,19 @@ public class PacienteController {
     }
 
     @PostMapping
-    @CacheEvict(value = "categories", allEntries = true)
+    @CacheEvict(value = "pacientes", allEntries = true)
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(responses = {
             @ApiResponse(responseCode = "400", description = "Falha na validação")
     })
-    public Paciente create(@RequestBody @Valid Paciente Paciente) {
-        log.info("Cadastrando paciente " + Paciente.getName() + Paciente.getPlano() 
-        + Paciente.getEmail() + Paciente.getTelefone());
-        return repository.save(Paciente);
+    public Paciente create(@RequestBody @Valid Paciente paciente) {
+        log.info("Cadastrando paciente " + paciente.getName() + paciente.getPlano() 
+                + paciente.getEmail() + paciente.getTelefone());
+    
+        // Evita que o JPA tente atualizar em vez de criar
+        paciente.setId(null);
+    
+        return repository.save(paciente);
     }
 
     @GetMapping("{id}")
