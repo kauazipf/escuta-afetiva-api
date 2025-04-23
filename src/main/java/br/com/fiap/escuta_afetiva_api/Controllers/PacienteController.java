@@ -2,8 +2,6 @@ package br.com.fiap.escuta_afetiva_api.Controllers;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -24,12 +22,12 @@ import br.com.fiap.escuta_afetiva_api.Repository.PacienteRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/pacientes")
+@Slf4j
 public class PacienteController {
-
-    private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private PacienteRepository repository;

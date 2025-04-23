@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,23 +14,17 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Paciente {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@NoArgsConstructor
+public class Plano {
+    
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "campo obrigatório")
     private String name;
 
-    @NotBlank(message = "campo obrigatório")
-    private String email;
-
-    @NotBlank(message = "campo obrigatório")
-    private String telefone;
-
-    @NotBlank(message = "campo obrigatório")
-    private String plano;
+    @Positive(message = "deve ser maior que zero")
+    private Float amount;
 
 }
