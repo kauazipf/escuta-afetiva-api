@@ -1,0 +1,287 @@
+type: collection.insomnia.rest/5.0
+name: Escuta Afetiva API
+meta:
+  id: wrk_cd4ee61ef9a94a64962d65490885e5e4
+  created: 1745447969448
+  modified: 1745447982949
+collection:
+  - name: Pacientes
+    meta:
+      id: fld_c55d1855231144d1b2ee6fef1b40d6b9
+      created: 1741352918052
+      modified: 1745447991555
+      sortKey: -1741352918052
+    children:
+      - url: localhost:8080/{{ _.path }}
+        name: index
+        meta:
+          id: req_0bd2a420f390436cb9f7a40da0bff28a
+          created: 1741198117700
+          modified: 1744282768480
+          isPrivate: false
+          sortKey: -1741352974269
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/1
+        name: destroy
+        meta:
+          id: req_556e0228346948bb8882af769ebd0190
+          created: 1741198146966
+          modified: 1744282782839
+          isPrivate: false
+          sortKey: -1741352974131.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}
+        name: create
+        meta:
+          id: req_170dac07d44a45899aafd26bc1fdb650
+          created: 1741198450727
+          modified: 1744282773057
+          isPrivate: false
+          sortKey: -1741352974169
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"name": "Lazer",
+            		"icon": "dice"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/10
+        name: update
+        meta:
+          id: req_9a7e45faa4944c72abb581dddc78a3d7
+          created: 1741198481381
+          modified: 1744282789104
+          isPrivate: false
+          sortKey: -1741352974119
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"name": "Lazer",
+            		"icon": "casino"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/1
+        name: get
+        meta:
+          id: req_e56f689a4ec04a4b8aaf23b9ba999116
+          created: 1741352953907
+          modified: 1744282778290
+          isPrivate: false
+          sortKey: -1741352974144
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      path: categories
+    environmentPropertyOrder:
+      "&":
+        - path
+  - name: Consultas
+    meta:
+      id: fld_efc821c6cda34fb0aed94bcecba873f7
+      created: 1744282793512
+      modified: 1745447999045
+      sortKey: -1741352918002
+    children:
+      - url: localhost:8080/{{ _.path }}
+        name: index
+        meta:
+          id: req_03b056533c19480395d15494e410c9df
+          created: 1744282793513
+          modified: 1744282883642
+          isPrivate: false
+          sortKey: -1741352974269
+        method: GET
+        parameters:
+          - id: pair_7a59792c1569445d9c5bdbc38a44cc30
+            name: description
+          - id: pair_c04cbd03284641b69282f4e0ce2033b2
+            name: date
+          - id: pair_20b7c9f080c04f0d9ac772e5d85273c1
+            name: amount
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/1
+        name: destroy
+        meta:
+          id: req_48d9f45187894b79927f62ac4f4f2251
+          created: 1744282793514
+          modified: 1744282793514
+          isPrivate: false
+          sortKey: -1741352974131.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}
+        name: create
+        meta:
+          id: req_294158356add41d78e92abe5d085fae8
+          created: 1744282793515
+          modified: 1744282793515
+          isPrivate: false
+          sortKey: -1741352974169
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"name": "Lazer",
+            		"icon": "dice"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/1
+        name: get
+        meta:
+          id: req_622300b735754620b8eafcfb171e112b
+          created: 1744282793516
+          modified: 1744282793516
+          isPrivate: false
+          sortKey: -1741352974144
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/{{ _.path }}/10
+        name: update
+        meta:
+          id: req_fed4c91f27ab4b8f82291641b0a976cd
+          created: 1744282793516
+          modified: 1744282793516
+          isPrivate: false
+          sortKey: -1741352974119
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"name": "Lazer",
+            		"icon": "casino"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      path: transactions
+    environmentPropertyOrder:
+      "&":
+        - path
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e1a8a1ae33fa42edae1db5b28c6d1e1c
+    created: 1741198098084
+    modified: 1741198098084
+environments:
+  name: Base Environment
+  meta:
+    id: env_ac27230ad01142b195edf8e13fd5ee7d
+    created: 1741198098083
+    modified: 1741198098083
+    isPrivate: false
