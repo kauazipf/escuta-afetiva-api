@@ -1,6 +1,8 @@
 package br.com.fiap.escuta_afetiva_api.Models;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,10 +27,12 @@ public class Consulta {
     private Long id;
 
     @FutureOrPresent(message = "não pode ser no passado")
-    private Date consultationDate;
+    private LocalDate consultationDate;
+
+    private LocalDateTime consultationHour;
 
     @PastOrPresent(message = "não pode ser no futuro")
-    private Date registrationDate;
+    private LocalDate registrationDate;
 
     @NotNull(message = "campo obrigatório")
     @ManyToOne

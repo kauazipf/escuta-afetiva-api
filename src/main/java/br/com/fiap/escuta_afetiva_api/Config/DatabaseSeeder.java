@@ -37,10 +37,10 @@ public class DatabaseSeeder {
          var consultas = new ArrayList<Consulta>();
          for (int i = 0; i < 50; i++) {
              consultas.add(Consulta.builder()
-                .consultationDate(Date.valueOf(LocalDate.now().plusDays(new Random().nextInt(30)))) // deve ser presente ou futuro
-                .registrationDate(Date.valueOf(LocalDate.now().minusDays(new Random().nextInt(30)))) // deve ser presente ou passado
-                .paciente(pacientes.get(new Random().nextInt(pacientes.size())))
-                .build());
+             .consultationDate(LocalDate.now().plusDays(new Random().nextInt(30))) // deve ser no presente ou futuro
+             .registrationDate(LocalDate.now().minusDays(new Random().nextInt(30))) // deve ser no presente ou passado
+             .paciente(pacientes.get(new Random().nextInt(pacientes.size())))
+             .build());
          }
          ConsultaRepository.saveAll(consultas);
 
